@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: bandnames-server-docker
+        container_name: bandnamesapp
+        restart: always # reiniciar el contenedor si se detiene
+        ports:
+            - '${PORT}:${PORT}'
+        environment:
+            PORT: ${PORT}
