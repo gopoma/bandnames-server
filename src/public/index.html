@@ -21,7 +21,11 @@
 
     <script>
         // Conexión con el socket server
-        const socket = io('http://localhost:8080');
+        const socket = io('http://localhost:4000');
+
+        // Aquí, van a obtener las bandas
+        socket.on('current-bands', console.log);
+
 
 
         /// Para emitir
@@ -31,8 +35,6 @@
         socket.on('mensaje-from-server', (data) => {
             // callback a ejecutar
         });
-
-
     </script>
 
 </body>
